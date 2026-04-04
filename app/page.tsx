@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import ResultSection from '@/components/ResultSection';
+import SampleOutputModal from '@/components/SampleOutputModal';
 
 const EXAMPLE_DATA = {
   age: '3세',
@@ -22,6 +23,7 @@ export default function Home() {
   const [result, setResult] = useState('');
   const [loading, setLoading] = useState(false);
   const [showExample, setShowExample] = useState(false);
+  const [showSampleOutput, setShowSampleOutput] = useState(false);
   const resultRef = useRef<HTMLDivElement>(null);
 
   const fillExample = () => {
@@ -100,6 +102,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-yellow-50">
+      {showSampleOutput && <SampleOutputModal onClose={() => setShowSampleOutput(false)} />}
       <div className="max-w-2xl mx-auto px-4 py-10">
         {/* Header */}
         <div className="mb-8">
@@ -118,7 +121,17 @@ export default function Home() {
         {/* Form Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
           {/* Example Button */}
-          <div className="flex justify-end mb-4">
+          <div className="flex justify-end gap-2 mb-4">
+            <button
+              onClick={() => setShowSampleOutput(true)}
+              className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition-colors"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              예시 결과 보기
+            </button>
             <button
               onClick={() => setShowExample(!showExample)}
               className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-700 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition-colors"
