@@ -43,6 +43,10 @@ export async function POST(req: NextRequest) {
 
 (문단)
 
+📌요약
+
+(문단)
+
 [좋아하는 놀이나 활동]
 
 (문단)
