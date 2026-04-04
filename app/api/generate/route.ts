@@ -1,10 +1,6 @@
 import { OpenAI } from 'openai';
 import { NextRequest } from 'next/server';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const { age, activities, classAttitude, peerRelationship, growthPoints, improvementPoints } = body;
@@ -15,6 +11,10 @@ export async function POST(req: NextRequest) {
       headers: { 'Content-Type': 'application/json' },
     });
   }
+
+  const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+  });
 
   const systemPrompt = `당신은 유치원 교사를 위한 생활기록부 작성 전문가입니다.
 교사가 입력한 유아 정보를 바탕으로 유치원생활기록부의 유아발달상황을 전문적이고 구체적으로 작성해 주세요.
