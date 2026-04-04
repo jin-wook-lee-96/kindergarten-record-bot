@@ -105,9 +105,9 @@ export default function Home() {
         <div className="mb-8">
           <div className="text-4xl mb-2">☀️</div>
           <h1 className="text-3xl font-bold text-gray-900 leading-tight mb-3">
-            유치원생활기록부 유아발달상황
+            예지를 위한 유치원생활기록부 유아발달상황
             <br />
-            생성봇
+            진욱봇
           </h1>
           <p className="text-gray-600 text-sm">
             생기부 유아발달상황을 대신 작성해드릴게요 🌟 키워드로 쉽게 입력해서 더 많이 도와드릴 수
