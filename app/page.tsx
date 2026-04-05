@@ -102,16 +102,11 @@ export default function Home() {
 
   return (
     <main className="min-h-screen relative">
-      {/* 배경 동영상 */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover -z-10"
-      >
-        <source src="/IMG_6676.MOV" type="video/mp4" />
-      </video>
+      {/* 배경 이미지 */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/IMG_7087.jpeg')" }}
+      />
       {/* 반투명 오버레이 */}
       <div className="fixed inset-0 bg-yellow-50/70 -z-10" />
 
