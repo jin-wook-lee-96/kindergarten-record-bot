@@ -108,7 +108,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/IMG_7087.jpeg')" }}
       />
       {/* 반투명 오버레이 */}
-      <div className="fixed inset-0 bg-yellow-50/70 -z-10" />
+      <div className="fixed inset-0 bg-yellow-50/50 -z-10" />
 
       {showSampleOutput && <SampleOutputModal onClose={() => setShowSampleOutput(false)} />}
       <div className="max-w-2xl mx-auto px-4 py-10">
